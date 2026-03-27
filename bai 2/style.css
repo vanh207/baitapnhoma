@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #090b10;
+  color: #e0e6ed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* --- Tiêu đề đơn giản hóa --- */
+.project-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.sub-title {
+  color: #8892b0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* --- Panel điều khiển --- */
+.demo-control-panel {
+  background-color: rgba(17, 21, 28, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+}
+
+/* --- Styles cho nút bấm --- */
+.btn-success {
+  background: rgba(46, 204, 113, 0.15);
+  border-color: rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+}
+.btn-error {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+}
+.btn-info {
+  background: rgba(52, 152, 219, 0.15);
+  border-color: rgba(52, 152, 219, 0.3);
+  color: #3498db;
+}
+.btn-warning {
+  background: rgba(241, 196, 15, 0.15);
+  border-color: rgba(241, 196, 15, 0.3);
+  color: #f1c40f;
+}
+
+/* --- TOAST SYSTEM --- */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.toast {
+  width: 380px;
+  background-color: rgba(17, 21, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.toast.hide {
+  animation: slideOutRight 0.5s ease forwards;
+}
+
+.toast-body {
+  flex: 1;
+}
+.toast-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.toast-msg {
+  font-size: 0.9rem;
+  color: #8892b0;
+  line-height: 1.4;
+}
+
+/* --- Màu sắc Toast (Viết trực tiếp) --- */
+.toast-success i,
+.toast-success .toast-title {
+  color: #2ecc71;
+}
+.toast-error i,
+.toast-error .toast-title {
+  color: #e74c3c;
+}
+.toast-info i,
+.toast-info .toast-title {
+  color: #3498db;
+}
+.toast-warning i,
+.toast-warning .toast-title {
+  color: #f1c40f;
+}
+
+/* --- Thanh Progress --- */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  animation: progressLinear 5s linear forwards; /* Thời gian cố định 5s */
+}
+
+.toast-success .toast-progress {
+  background-color: #2ecc71;
+}
+.toast-error .toast-progress {
+  background-color: #e74c3c;
+}
+.toast-info .toast-progress {
+  background-color: #3498db;
+}
+.toast-warning .toast-progress {
+  background-color: #f1c40f;
+}
+
+/* --- Animations --- */
+@keyframes slideInRight {
+  from {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+}
+
+@keyframes progressLinear {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

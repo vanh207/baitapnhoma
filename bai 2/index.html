@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K25_CNTT_HN - Toast Notification System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="main-wrapper">
+        <div class="header">
+            <h1 class="project-title">K25_CNTT_HN</h1>
+            <h2 class="sub-title">Toast Notification System</h2>
+        </div>
+
+        <div class="demo-control-panel">
+            <p class="panel-label">// LIVE DEMO - TRIGGER TOASTS</p>
+            <div class="button-group">
+                <button class="btn btn-success" onclick="showSuccessToast()"><i class="fas fa-check-circle"></i> Success</button>
+                <button class="btn btn-error" onclick="showErrorToast()"><i class="fas fa-times-circle"></i> Error</button>
+                <button class="btn btn-info" onclick="showInfoToast()"><i class="fas fa-info-circle"></i> Info</button>
+                <button class="btn btn-warning" onclick="showWarningToast()"><i class="fas fa-exclamation-triangle"></i> Warning</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
